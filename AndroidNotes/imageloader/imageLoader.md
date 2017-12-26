@@ -24,4 +24,4 @@
 #### Glide使用笔记
 
 - Glide.with(#) Glide和Activity/Fragment的生命周期绑定，#尽量传Activity或Fragment，不传Context
-- Glide更改默认Bitmap格式为ARGB_8888[案例]()
+- Glide更改默认Bitmap格式为ARGB_8888[案例](https://github.com/zwping/PNotes/blob/master/AndroidNotes/imageloader/src/main/java/win/zwping/imageloader/glide/GlideModule.java)
