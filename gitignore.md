@@ -1,6 +1,6 @@
 # GitIgnore语法
 
-> 解析一下AndroidStudio默认生成的`.gitignore`文件
+> 首先解析一下AndroidStudio默认生成的`.gitignore`文件，初步了解gitignore语法
 
 | ignore语句 | 白话 |
 | --- | --- |
@@ -12,7 +12,7 @@
 | .DS_Store| 忽略当前目录下.DS_Store文件 |
 | /build| 忽略当前目录下的build文件夹 |
 | /captures| 忽略当前目录下的captures文件夹 |
-| .externalNativeBuild| 忽略当前目录下externalNativeBuild文件 |
+| .externalNativeBuild| 忽略当前目录下.externalNativeBuild文件 |
 
 > 从中得到三点：
 > 
@@ -27,7 +27,10 @@
 > - '*' 为通配多个字符
 > - '?' 为通配单个字符
 
-#### 平时习惯性的将AndroidStudio项目根目录下的.gitignore轻微更改一下，以达到线上文件最小化
+> 初步了解了之后算是精通gitignore语法，就达到大师级别了? 有高级的写法嘛? (´⊙ω⊙`)一脸懵逼状
+
+#### 实践
+> 平时习惯性的将AndroidStudio项目根目录下的.gitignore轻微更改一下，以达到线上文件最小化
 
 ```
 *.iml
