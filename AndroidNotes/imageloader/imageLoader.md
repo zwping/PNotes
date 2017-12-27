@@ -25,7 +25,7 @@
 
 > 阅 [文-Glide介绍](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2650.html)、[郭霖-Glide最全解析](http://blog.csdn.net/column/details/15318.html)得出的笔记
 
-- Glide.with(#) Glide和Activity/Fragment的生命周期绑定，#尽量直接传Activity或Fragment，不传Context
+- Glide和Activity/Fragment的生命周期绑定，so. Glide.with(#) #尽量直接传Activity或Fragment，不传Context
 - Glide提供了自定义模块的功能，建议更改Glide的Bitmap格式和缓存地址，[案例](https://github.com/zwping/PNotes/blob/master/AndroidNotes/imageloader/src/main/java/win/zwping/imageloader/glide/GlideModule.java)，<b>√建议使用</b>
 - Glide加载图片的大小和ImageView大小一致，默认会对不同大小ImageView Glide都会进行不同大小图片的缓存，所以Glide占用内存更多
 - Glide默认只缓存加载大小的图片，每次重新加载至不同大小的ImageView时都会重新拉取Url，在这建议Glide设置同时缓存全尺寸和不同大小的尺寸[案例]()，下次再加载至不同大小的ImageView，会从缓存中取全尺寸的图片，调整大小缓存并显示，<b>√建议使用</b>

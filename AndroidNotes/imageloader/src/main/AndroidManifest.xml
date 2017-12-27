@@ -19,9 +19,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="win.zwping.imageloader.glide.GlideModule"
-            android:value="AppGlideModule" />
     </application>
 
 </manifest>

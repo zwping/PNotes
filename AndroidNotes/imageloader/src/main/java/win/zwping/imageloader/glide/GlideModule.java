@@ -13,10 +13,12 @@ import com.bumptech.glide.request.RequestOptions;
 /**
  * <p>describe：
  * <p>    note：Glide默认加载Bitmap格式为RGB_565，Picasso默认加载Bitmap格式为ARGB_8888
- * <p>    note: Glide重写{@link AppGlideModule}也可以加载ARGB_8888格式的Bitmap、将缓存地址更换至SD卡，并将缓存大小调整为原来的2倍(500M)，同时需要使用<meta-data>标签初始化
+ * <p>    note: Glide重写{@link AppGlideModule}也可以加载ARGB_8888格式的Bitmap、将缓存地址更换至SD卡，并将缓存大小调整为原来的2倍(500M)
+ * <p>    note: 同时需要增加{@link com.bumptech.glide.annotation.GlideModule}注解标签，重新编译生成{@link GlideApp}，后期使用直接使用GlideApp即可
  * <p>    note:
  * <p> @author：zwp on 2017/12/26 0026 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */
+@com.bumptech.glide.annotation.GlideModule
 public class GlideModule extends AppGlideModule {
 
     public static final int DISK_CACHE_SIZE = 500 * 1024 * 1024;

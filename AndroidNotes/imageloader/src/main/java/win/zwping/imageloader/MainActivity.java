@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -21,6 +22,8 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
+import win.zwping.imageloader.glide.GlideUtil;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
         int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
         System.out.println("Max memory is " + maxMemory + "KB");
 
-//        Glide.with(this).asGif().load("123").apply(new RequestOptions().dontTransform().override(Target.SIZE_ORIGINAL,Target.SIZE_ORIGINAL).transform()).into(new ImageView(this));
-
         Set<Integer> sets = new HashSet<>();
         for (int i = 0; i < 10; i++) {
             sets.add(new Random().nextInt(5));
@@ -42,5 +43,14 @@ public class MainActivity extends AppCompatActivity {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+
+    }
+
+    public void onClick(View view) {
+
+        String url = "https://raw.githubusercontent.com/zwping-win/RESOURCES/master/test/img-01.jpg";
+
+        GlideUtil.glide(this, url, ((ImageView) findViewById(R.id.img)));
+        GlideUtil.glide1(this, url, ((ImageView) findViewById(R.id.img1)));
     }
 }

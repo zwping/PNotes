@@ -4,7 +4,7 @@
 
 | ignore语句 | 白话 |
 | --- | --- |
-| *.iml | 忽略当前目录包含子目录所有后缀为.iml的文件 |
+| *.iml | 忽略当前目录包含子目录中文件名后缀为.iml的文件 |
 | .gradle | 忽略当前目录的.gradle文件 |
 | /local.properties| 忽略当前目录下local.properties文件夹 |
 | /.idea/workspace.xml| 忽略当前目录指定文件夹中的文件 |
@@ -43,9 +43,11 @@ build/
 /captures
 .externalNativeBuild
 .idea
+gradlew
+gradlew.bat
 /gradle
 ```
 
-`ps: 增加了.idea、/gradle、将/build更改为build/`
+`ps: 增加了.idea、gradlew、gradlew.bat、/gradle`
 
 ###### 待完善...
