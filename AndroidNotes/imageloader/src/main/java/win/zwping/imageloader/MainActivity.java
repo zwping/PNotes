@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
@@ -31,26 +32,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-        System.out.println("Max memory is " + maxMemory + "KB");
+        String url = "https://raw.githubusercontent.com/zwping-win/RESOURCES/master/test/img-01.jpg";
+        String url1 = "https://raw.githubusercontent.com/zwping-win/RESOURCES/master/test/gif-01.gif";
 
-        Set<Integer> sets = new HashSet<>();
-        for (int i = 0; i < 10; i++) {
-            sets.add(new Random().nextInt(5));
-        }
+        final ImageView img = findViewById(R.id.img);
+        Glide.with(this).asGif().apply(new RequestOptions().centerCrop()).load(url1).into(new SimpleTarget<GifDrawable>() {
+            @Override
+            public void onResourceReady(GifDrawable resource, Transition<? super GifDrawable> transition) {
+                gifDrawable = resource;
+                img.setImageDrawable(resource);
+            }
+        });
 
-        Iterator iterator = sets.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+        ImageView img1 = findViewById(R.id.img1);
+        Glide.with(this).load(url).into(img1);
 
     }
 
+    GifDrawable gifDrawable;
+
     public void onClick(View view) {
-
-        String url = "https://raw.githubusercontent.com/zwping-win/RESOURCES/master/test/img-01.jpg";
-
-        GlideUtil.glide(this, url, ((ImageView) findViewById(R.id.img)));
-        GlideUtil.glide1(this, url, ((ImageView) findViewById(R.id.img1)));
+        if (null != gifDrawable) {
+            if (gifDrawable.isRunning()) {
+                gifDrawable.stop();
+            } else {
+                gifDrawable.start();
+            }
+        } else {
+            Toast.makeText(this, "123123123", Toast.LENGTH_SHORT).show();
+        }
     }
 }
