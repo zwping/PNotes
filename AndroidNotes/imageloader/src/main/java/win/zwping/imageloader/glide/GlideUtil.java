@@ -4,6 +4,11 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+
+import win.zwping.imageloader.R;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 /**
  * <p>describe：
@@ -13,9 +18,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 public class GlideUtil {
 
     public static void glide(Context context, String url, ImageView imageView) {
-        GlideApp.with(context).load(url).skipMemoryCache(true).into(imageView);
+        GlideApp.with(context).load(url).placeholder(R.drawable.ic_launcher_background).transition(withCrossFade())
+                .skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).thumbnail(0.01f).circleCrop().into(imageView);
     }
     public static void glide1(Context context, String url, ImageView imageView) {
-        GlideApp.with(context).load(url).skipMemoryCache(false).into(imageView);
+        GlideApp.with(context).load(url).placeholder(R.drawable.ic_launcher_background).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.RESOURCE).fitCenter().into(imageView);
     }
 }

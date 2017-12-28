@@ -7,8 +7,11 @@ import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.Registry;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory;
+import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
+
+import java.io.InputStream;
 
 /**
  * <p>describe：
@@ -26,12 +29,13 @@ public class GlideModule extends AppGlideModule {
     @Override
     public void applyOptions(Context context, GlideBuilder builder) {
         super.applyOptions(context, builder);
-        builder.setDiskCache(new ExternalPreferredCacheDiskCacheFactory(context, DISK_CACHE_SIZE)); //更换缓存地址及扩充缓存大小
-        builder.setDefaultRequestOptions(new RequestOptions().format(DecodeFormat.PREFER_ARGB_8888)); //更换编码格式
+        builder.setDiskCache(new ExternalPreferredCacheDiskCacheFactory(context,DISK_CACHE_SIZE)); //更换缓存地址及扩充缓存大小
+        builder.setDefaultRequestOptions(new RequestOptions().format(DecodeFormat.PREFER_ARGB_8888).disallowHardwareConfig()); //更换编码格式
     }
 
     @Override
     public void registerComponents(Context context, Glide glide, Registry registry) {
         super.registerComponents(context, glide, registry);
+//        registry.replace(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory());
     }
 }

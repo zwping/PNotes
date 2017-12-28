@@ -23,7 +23,7 @@
 
 #### Glide使用笔记
 
-> 阅 [文-Glide介绍](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2650.html)、[郭霖-Glide最全解析](http://blog.csdn.net/column/details/15318.html)得出的笔记
+> 阅 [文-Glide介绍](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2650.html)、[郭霖-Glide最全解析](http://blog.csdn.net/column/details/15318.html)、[官方文档]()得出的笔记
 
 - Glide和Activity/Fragment的生命周期绑定，so. Glide.with(#) #尽量直接传Activity或Fragment，不传Context
 - Glide提供了自定义模块的功能，建议更改Glide的Bitmap格式和缓存地址，[案例](https://github.com/zwping/PNotes/blob/master/AndroidNotes/imageloader/src/main/java/win/zwping/imageloader/glide/GlideModule.java)，<b>√建议使用</b>
@@ -33,8 +33,9 @@
 - Glide加载gif时，一定要用`diskCacheStrategy(DiskCacheStrategy.SOURCE)`或`NONE`，不然会将gif每一帧都压缩缓存，超级耗时
 - Glide预加载preload()时，一定要用diskCacheStrategy(DiskCacheStrategy.SOURCE)缓存全尺寸图片
 - Glide默认有图片转换功能，如果需要加载原始图片大小，建议使用`override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)`，不建议直接取消Glide图片转换功能`.dontTransform()`
+- 在一个页面中加载大量图片，建议不使用过渡动画，[说明](https://muyangmin.github.io/glide-docs-cn/doc/transitions.html#性能提示)
 
-> Glide QA
+> Glide FQA
 
 - <font color="#F08080">Glide怎么监听Activity/Fragment的生命周期</font>
 <br />
