@@ -8,14 +8,14 @@
 | 作者 | bumptech |  |  |  |
 | 公司 | google推荐 |  |  |  |
 | 时间 | 2014 |  |  |  |
-| 版本 | 4.4.0 | 2.5.2 |  |  |
+| 版本 | 4.4.0 | 2.5.2 |  | 2.6.0 |
 | Bitmap格式 | RGB_565 | ARGB_8888 |  |  |
 | 加载速度 | 1 | 2 |  |  |
 | 支持Gif | 支持 | 不支持 |  |  |
 | 播放本地视频 | 支持 | 不支持 |  |  |
 | thumbnail | 支持 | 不支持 |  |  |
 | [库的大小](https://github.com/bumptech/glide/releases/tag/v4.4.0) | 637.2KB |  |  |  |
-| 方法数 |  | [849](http://www.methodscount.com/?lib=com.squareup.picasso%3Apicasso%3A2.5.2) |  |  |
+| 方法数 |  | [849](http://www.methodscount.com/?lib=com.squareup.picasso%3Apicasso%3A2.5.2) |  | 4224 ([3512](http://www.methodscount.com/?lib=me.panpf%3Asketch%3A2.6.0)+[712](http://www.methodscount.com/?lib=me.panpf%3Asketch-gif%3A2.6.0)) |
 |  |  |  |  |  |
 |  |  |  |  |  |
 |  |  |  |  |  |
