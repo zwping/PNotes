@@ -18,6 +18,8 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ImageView img1 = findViewById(R.id.img1);
-        Glide.with(this).load(url).into(img1);
+        Glide.with(this).load(new File("file:///android_asset/v.mp4")).apply(new RequestOptions().error(R.drawable.ic_launcher_background)).into(img1);
 
     }
 
