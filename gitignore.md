@@ -19,9 +19,11 @@ build/
 - Ps：
 - 增加了.idea、/gradle、/gradle*
 - 将/build更改为build/
-- `其中 .idea文件夹属于studio的配置信息  
-gradle版本众多，每次更新不同版本的gradle都需要翻墙，开源后免去同行加载你的项目过慢(兼容性增加)  
-So，去除.idea和gradle相关文件是必要的`
+ - `其中`
+ - `.idea文件夹属于studio的配置信息`
+ - `gradle版本众多，每次更新不同版本的gradle都需要翻墙，开源后免去同行加载你的项目过慢(兼容性增加)`
+ - `So，去除.idea和gradle相关文件是必要的`
+ 
 >  效果预览
 
 ![修改了Git Ignore后文件列表对比](https://github.com/zwping-win/RESOURCES/blob/master/android/%E4%BF%AE%E6%94%B9%E4%BA%86GitIgnore%E5%90%8E%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87.png?raw=true)
