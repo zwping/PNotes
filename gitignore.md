@@ -20,7 +20,9 @@ build/
 - 增加了.idea、/gradle、/gradle*
 - 将/build更改为build/
 - `其中 .idea文件夹属于studio的配置信息
+
 gradle版本众多，每次更新不同版本的gradle都需要翻墙，开源后免去同行加载你的项目过慢(兼容性增加)
+
 So，去除.idea和gradle相关文件是必要的`
 >  效果预览
 
