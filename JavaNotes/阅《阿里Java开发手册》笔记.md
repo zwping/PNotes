@@ -1,7 +1,3 @@
-##### 手册愿景“码出高效，码出质量”，身为码农的你怎样保证你的Code高效和质量？
-生搬硬套难有成就，在这依据阿里手册，去掉阿里，迭代一份自我的《Java开发手册》
-
-
 Tips：
 
  - [**在线查阅**](https://github.com/zwping-win/RESOURCES/blob/master/java/%E6%96%87%E6%A1%A3/%E9%98%BF%E9%87%8CJava%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C.pdf)
@@ -9,6 +5,8 @@ Tips：
  - [**在线考试获取阿里证书**](https://edu.aliyun.com/certification/cldt02?spm=a2c4e.11153959.blogcont69327.8.3d572b13a4Ay0g)
  - [**ide插件**](https://github.com/alibaba/p3c)在线监测你的代码是否符合规范  ***必装***
 
+##### 手册愿景“码出高效，码出质量”，身为码农的你怎样保证你的Code高效和质量？
+生搬硬套难有成就，在这依据阿里手册，去掉阿里，迭代一份自我的《Java开发手册》
 
 > 手册从Java开发过程中6个维度铺开，描绘`规范`
 
