@@ -23,6 +23,7 @@
 #-------------------------------------------定制化区域----------------------------------------------
 #---------------------------------1.实体类---------------------------------
 -keep class com.oa.sihongyj.model.** { *; }
+
 #-------------------------------------------------------------------------
 #---------------------------------2.第三方包-------------------------------
 
@@ -65,12 +66,15 @@
 -keep class android.support.** {
     *;
 }
+#保持 native 方法不被混淆
 -keepclasseswithmembernames class * {
     native <methods>;
 }
+#保持自定义控件类不被混淆
 -keepclassmembers class * extends android.app.Activity{
     public void *(android.view.View);
 }
+#保持枚举 enum 类不被混淆 如果混淆报错，建议直接使用上面的 -keepclassmembers class * implements java.io.Serializable即可
 -keepclassmembers enum * {
     public static **[] values();
     public static ** valueOf(java.lang.String);
@@ -81,13 +85,16 @@
     public <init>(android.content.Context, android.util.AttributeSet);
     public <init>(android.content.Context, android.util.AttributeSet, int);
 }
+#保持自定义控件类不被混淆
 -keepclasseswithmembers class * {
     public <init>(android.content.Context, android.util.AttributeSet);
     public <init>(android.content.Context, android.util.AttributeSet, int);
 }
+#保持 Parcelable 不被混淆
 -keep class * implements android.os.Parcelable {
     public static final android.os.Parcelable$Creator *;
 }
+#保持 Serializable 不被混淆
 -keepclassmembers class * implements java.io.Serializable {
     static final long serialVersionUID;
     private static final java.io.ObjectStreamField[] serialPersistentFields;
@@ -96,12 +103,21 @@
     java.lang.Object writeReplace();
     java.lang.Object readResolve();
 }
+#不混淆资源类
 -keep class **.R$* {
     *;
 }
 -keepclassmembers class * {
     void *(**On*Event);
 }
+
+##########JS接口类不混淆，否则执行不了
+-dontwarn com.android.JsInterface.**
+-keep class com.android.JsInterface.** {*; }
+
+#极光推送和百度lbs android sdk一起使用proguard 混淆的问题#http的类被混淆后，导致apk定位失败，保持apache 的http类不被混淆就好了
+-dontwarn org.apache.**
+-keep class org.apache.**{ *; }
 
 #----------------------------------------------------------------------------
 #---------------------------------webview------------------------------------
