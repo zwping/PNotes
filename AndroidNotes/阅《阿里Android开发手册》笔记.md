@@ -67,8 +67,6 @@ Tips：
 
 ### 八、安全
 
-- 8.1：将 android:allowbackup 属性必须设置为 false，阻止应用数据被导出
-
 ### 九、其它
 
 
