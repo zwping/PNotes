@@ -1,4 +1,4 @@
-2017年10月，Google发布了Android Studio 3.0，更新内容除了常见的一些问题修复/性能更优
+2017年10月26日，Google发布了Android Studio 3.0和Oreo预览版，更新内容除了常见的一些问题修复/性能更优
 
 还带来了对Android开发更便捷稳定的功能：
 
