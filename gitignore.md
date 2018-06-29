@@ -26,7 +26,7 @@ build/
  
 >  效果预览
 
-![修改了Git Ignore后文件列表对比](https://github.com/zwping-win/RESOURCES/blob/master/android/%E4%BF%AE%E6%94%B9%E4%BA%86GitIgnore%E5%90%8E%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87.png?raw=true)
+![修改了Git Ignore后文件列表对比](https://raw.githubusercontent.com/zwping-win/RESOURCES/master/android/%E4%BF%AE%E6%94%B9%E4%BA%86GitIgnore%E5%90%8E%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87.png)
 
 
 Next，下面了解一下Git Ignore的语法
