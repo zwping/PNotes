@@ -35,6 +35,8 @@ cd / 退回根目录
 f 下一页
 b 上一页
 q 退出当前查阅状态
+ctrl+c 强制中断程序运行
+ctrl+z 挂起当前任务
 git init 初始化git仓库
 git init --bare  初始化服务器
 git status 显示当前文件状态
@@ -92,6 +94,8 @@ git config user.name 查询当前项目的用户名
 git config --global --list 查询全局配置列表
 git tag 获取所有标签
 git remote -v 查询远程仓库地址
+git remote 查询远程仓库别名
+git remote show [远程仓库别名] 查询远程仓库详细信息
 git diff 查询缓存区有哪些改动
 git diff --staged 123.txt 查看缓存区123.txt文件有哪些改动
 git diff --staged 查看暂存区有哪些改动
@@ -100,6 +104,7 @@ git diff head 查看当前文件与本地库的差异
 git diff head -- 123.txt 查看123.txt文件和本地库中123.txt的差异
 git diff 版本号1 版本号2 查询两次提交有哪些改动
 git diff 分支名1 分支名2 查询两个分支有哪些改动
+git diff [BranchName] --stat 查看当前分支和指定分支的简单差异
 git stash list 查询当前隐藏标记集合
 git branch 查看本地分支
 git branch -r 查看远程分支
@@ -111,13 +116,16 @@ git show v1.0 查看标签详情
 - u (Update 更新)
 
 ```
+git branch -m [OldBranchName] [NewBranchName] 修改分支名称
 git merge branch1 将分支1中的代码合并至master中
 git merge --no-ff -m "fix" 将branch1 将分支1中的代码合并至master中，禁用Fast forward模式（可以看出是从哪个分支合并过来的，及合并缘由）
 git rebase branch1 将分支1中的代码合并至master中
+git checkout --patch [BranchName] [FilePath] 合并分支的单个文件代码
 git push -u origin master 将master主分支推送至origin远程仓库上，并关联远程主分支
 git push origin branch1 将分支1推送至origin远程仓库上
 git push origin v1.0 将标签1推送至远程仓库上
 git push origin --tags 将所有标签推送至远程仓库
+git push [远程仓库别名] [新分支名] 将本地新分支推送至远程仓库
 git pull 更新本地仓库
 git pull origin master 将远程仓库master主分支上的代码更新至本地仓库
 ```
