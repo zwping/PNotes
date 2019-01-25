@@ -1,0 +1,107 @@
+[项目地址](https://github.com/zwping/PSeries)
+
+ > ### 目录
+ > 
+ > [目的](#目的)
+ > 
+ > [底层框架解析](#底层框架解析)
+ > 
+ > [案例 - 使用方法](#案例-使用方法)
+
+
+#### 目的
+
+-----
+
+ > 无侵入MVP库，不干扰当前项目的逻辑
+ > 
+ > 优化Model View Presenter之间可阅读性
+ > 
+ > 超低学习成本，拿上手就会用
+
+#### 底层框架解析
+
+-------
+
+1. 定义BasePresenter/BaseView，实现：
+	- p <==> v 直接获取，缩减代码
+	- 规范使用，增加严谨性
+2. 定义BaseMvpActivity/BaseMvpFragment，实现：
+    - 通过注解反射方法获取Presenter对象，免去new的过程
+    - 绑定Presenter生命周期，防止内存泄露
+3. 声明注解@MvpPreImpl
+    - **核心**
+    - 通过注解的方式获取P对象，极度的简化了代码，
+    - 同时，固定P的位置，增加了代码的阅读性
+
+##### 目录结构图
+
+![目录结构图](https://gitee.com/zwping_res/Res/raw/master/android/pseries/mvp_simple_framwork.png)
+
+#### 案例 - 使用方法
+
+--------
+
+ > 案例方法下载[Demo](https://github.com/zwping/PSeries/mvp_simple)查看更清楚
+
+在这贴出BaseActivity / *MainActivity(使用了MVP) /  SecondActivity(未使用MVP)*的部分代码，提前了解下该套MVP库怎么达到**无侵入、易理解、超容易使用**
+
+ > BaseActivity
+
+```java
+public abstract class BaseActivity<V extends BaseView, P extends BasePresenter> extends BaseMvpActivity<V, P> {
+    
+    /* 自定义自己熟悉的BaseActivity抽象方法 */
+
+    /* ....other code.... */
+}
+```
+
+ > MainActivity
+
+```java
+@MvpPreImpl(TestPreImpl.class)
+public class MainActivity extends BaseActivity<TestContract.IView, TestContract.IPresenter> implements TestContract.IView {
+
+    /*
+        如果需要使用MVP模式，套用这三步
+        标注 ---> @MvpPreImpl(PreImpl.class)
+        申明 ---> BaseActivity(V,P)
+        实现 ---> implements IView
+     */
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        getPre().apiGetUserInfo("id"); //不需要New Presenter，直接getPre()即可 **简化代码**
+    }
+
+  /* ....other code.... */
+}
+```
+
+ > SecondActivity
+ 
+```java
+public class SecondActivity extends BaseActivity {
+
+    /*
+        有些界面不需要使用MVP的模式，不标注@MvpPreImpl()即可，不影响其它任何操作
+        这样
+        界面清晰明了，没有任何冗余的代码
+     */
+
+    /* ....other code.... */
+}
+```
+
+最后贴出案例目录结构图，通过笔者眼中的MVP，助你理解出自己的一份MVP架构
+
+![结构图](https://gitee.com/zwping_res/Res/raw/master/android/pseries/mvp_simple_dir.png)
+
+
+End.
+
+--------------
+> 发布于[CSDN](https://blog.csdn.net/z1101558280/article/details/81017944)

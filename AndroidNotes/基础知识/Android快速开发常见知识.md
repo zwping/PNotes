@@ -11,6 +11,8 @@ ADB的正确使用(配置ADB)
 Android SDK "Smaples for SDK" 和 "Sources for ANdroid SDK"的安装使用
 了解Ant、ADT、APPT
 
+阿里云Maven支持(国内镜像库)
+
 MD等原生控件的理解
 Lint 280种不同的检查
 单元测试框架 JUnit 4
@@ -19,3 +21,9 @@ Gradle 灵活配置
 C++ NDK的了解
 蒲公英分发在线升级配置
 APK分析器 
+
+NDK支持配置
+ProGuard配置
+极光配置
+多版本配置
+.gitignore
